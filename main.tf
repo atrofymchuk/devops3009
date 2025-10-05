@@ -17,7 +17,7 @@ resource "hcloud_server" "server" {
   name = "node-1"
   server_type = "cax21"
   location = "hel1"
-  image = "Rocky Linux 10"
+  image = "ubuntu-24.04"
   public_net {
     ipv4_enabled = true
     ipv6_enabled = true
