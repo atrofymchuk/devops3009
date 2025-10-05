@@ -22,4 +22,7 @@ resource "hcloud_server" "server" {
     ipv4_enabled = true
     ipv6_enabled = true
   }
+  labels = {
+    "env" : "devops3009"
+  }
 }
