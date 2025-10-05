@@ -18,4 +18,8 @@ resource "hcloud_server" "server" {
   server_type = "cpx11"
   location = "hel1"
   image = "ubuntu-24.04"
+  public_net {
+    ipv4_enabled = true
+    ipv6_enabled = true
+  }
 }
