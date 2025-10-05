@@ -13,3 +13,9 @@ provider "hcloud" {
   token = var.hcloud_token 
 }
 
+resource "hcloud_server" "server" {
+  name = "node-1"
+  server_type = "cpx11"
+  location = "hel1"
+  image = "ubuntu-24.04"
+}
