@@ -17,12 +17,18 @@ resource "hcloud_server" "server" {
   name = "node-1"
   server_type = "cax21"
   location = "hel1"
-  image = "ubuntu-24.04"
+  image = "rocky-10"
   public_net {
     ipv4_enabled = true
-    ipv6_enabled = true
+    ipv6_enabled = false
   }
   labels = {
     "env" : "devops3009"
   }
+  user_data = <<-EOF
+    #!/bin/bash
+    dnf update -y
+    dnf install -y nginx
+    echo "Hello from Terraform!" > /var/www/html/index.html
+  EOF
 }
